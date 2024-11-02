@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo/CareerHub.png'
 import Button from '../Button/Button';
 
-const Navbar = ({title}) => {
+const Navbar = () => {
     return (
         <>
         <div className="navbar bg-base-100 mb-8">
@@ -43,16 +43,6 @@ const Navbar = ({title}) => {
             <Button title={"Start Applying"}></Button>
         </div>
         </div>
-
-        {/* <div className='flex justify-between items-center'>
-                <img src={logo} alt="Career hub logo" />
-            <nav className='flex gap-6 text-xl'>
-                <NavLink to={'/'}>Statistics</NavLink>
-                <NavLink to={'applied-job'}>Applied Jobs</NavLink>
-                <NavLink to={'blog'}>Blog</NavLink>
-            </nav>
-                <Button title={"Start Applying"}></Button>
-        </div> */}
         </>
     );
 };

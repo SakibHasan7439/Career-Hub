@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom"
 import bgImage from '../../assets/images/bg1.png'
 import Button from "../Button/Button";
+import { addToStoredList } from "../../Utility/addToDb";
 
 const JobDetails = () => {
 
@@ -8,6 +9,11 @@ const JobDetails = () => {
     const details = useLoaderData();
     console.log(details);
     const convertToInt = parseInt(id);
+
+    const handleApplyNow = (id) =>{
+        
+        addToStoredList(id);
+    }
 
     const detail = details.find((detail) => detail.id === convertToInt)
     const {job_description, job_responsibility, educational_requirements, experiences, salary, job_title, contact_information
@@ -46,7 +52,7 @@ const JobDetails = () => {
                         <p>Address: {contact_information.address}</p>
                     </div>
                     </div>
-                    <Button title={"Apply now"}></Button>
+                    <Button onClick={()=>handleApplyNow(id)} title={"Apply now"}></Button>
                 </div>
             </div>
         </div>
