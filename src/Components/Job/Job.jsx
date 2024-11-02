@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom';
 import location_icon from '../../assets/icons/Location.png'
 import money from '../../assets/icons/money.png'
 import Button from '../Button/Button';
 
 const Job = ({data}) => {
-    const {company_name, job_title, job_type, location, remote_or_onsite, salary, logo} = data;
+    const {id, company_name, job_title, job_type, location, remote_or_onsite, salary, logo} = data;
     return (
         <div className="card bg-base-100 border-2">
             <div className="card-body">
@@ -26,7 +27,9 @@ const Job = ({data}) => {
                     </div>
                 </div>
                 <div className="card-actions justify-start">
-                    <Button title={"Show Details"}></Button>
+                    <Link to={`featuredJobs/${id}`}>
+                        <Button title={"Show Details"}></Button>
+                    </Link>
                 </div>
             </div>
         </div>
